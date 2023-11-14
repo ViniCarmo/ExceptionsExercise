@@ -43,6 +43,7 @@ public class Principal {
 
              reservation.updateDates(checkin, checkout);
             System.out.println(reservation);
+
         }
     }
 

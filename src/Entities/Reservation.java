@@ -54,5 +54,6 @@ public class Reservation {
                 +", "
                 + duration()
                 +" Nights";
+
     }
 }
