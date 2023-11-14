@@ -38,6 +38,7 @@ public class Reservation {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
+
     public String updateDates(Date checkin, Date checkout) {
         Date now = new Date();
         if (checkin.before(now) || checkout.before(now)) {

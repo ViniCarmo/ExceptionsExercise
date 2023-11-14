@@ -37,12 +37,9 @@ public class Principal {
              String error = reservation.updateDates(checkin, checkout);
              if (error != null){
                  System.out.println("Error in reservation: " + error);
-
-
         }else{
                  System.out.println(reservation);
              }
     }
-
     }
 }
