@@ -38,9 +38,17 @@ public class Reservation {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public void updateDates(Date checkin, Date checkout){
+    public String updateDates(Date checkin, Date checkout) {
+        Date now = new Date();
+        if (checkin.before(now) || checkout.before(now)) {
+            return "[ERRO] RESERVATION DATES FOR UPDATE MUST BE FUTURE";
+        }
+        if (!checkout.after(checkin)) {
+            return "Enter data to update the reservation: ";
+        }
         this.checkin = checkin;
         this.checkout = checkout;
+        return null;
     }
 
     @Override

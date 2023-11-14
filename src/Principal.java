@@ -34,17 +34,14 @@ public class Principal {
             System.out.print("Check-Out date (dd/mm/yyyy: ");
              checkout = sdf.parse(scanner.next());
 
-             Date now = new Date();
-             if (checkin.before(now) || checkout.before(now)){
-                 System.out.println("[ERRO] RESERVATION DATES FOR UPDATE MUST BE FUTURE");
-             }else if(!checkout.after(checkin)) {
-                 System.out.println("Enter data to update the reservation: ");
-             }else{
+             String error = reservation.updateDates(checkin, checkout);
+             if (error != null){
+                 System.out.println("Error in reservation: " + error);
 
-             reservation.updateDates(checkin, checkout);
-            System.out.println(reservation);
 
-        }
+        }else{
+                 System.out.println(reservation);
+             }
     }
 
     }
